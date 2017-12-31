@@ -56,6 +56,7 @@ LOCAL_APPS = [
     # custom users app
     'nomadgram.users.apps.UsersConfig',
     'nomadgram.images.apps.ImagesConfig',
+    'rest_framework'
     # Your stuff: custom apps go here
 ]
 
