@@ -21,6 +21,7 @@ class Image(TimeStampedModel):
     caption = models.TextField()
     creator = models.ForeignKey(user_models.User, null=True)
 
+    
     def __str__(self):
         return '{} - {}'.format(self.location, self.caption) 
 
