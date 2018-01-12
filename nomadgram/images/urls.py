@@ -20,3 +20,4 @@ urlpatterns = [
 
 # 2 we want to find an image with this id
 # 3 we want to create a like for that image
+#dd
