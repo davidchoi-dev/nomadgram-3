@@ -33,6 +33,10 @@ class Image(TimeStampedModel):
     class Meta:
         ordering = ['-created_at']
 
+    @property
+    def comment_count(self):
+        return self.comments.all().count()
+
 
 @python_2_unicode_compatible
 class Comment(TimeStampedModel):
