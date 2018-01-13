@@ -56,7 +56,9 @@ LOCAL_APPS = [
     # custom users app
     'nomadgram.users.apps.UsersConfig',
     'nomadgram.images.apps.ImagesConfig',
-    'rest_framework' #REST Framework
+    'rest_framework', #REST Framework
+    'taggit', #Tags for the photos
+
     # Your stuff: custom apps go here
 ]
 
@@ -278,3 +280,6 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+TAGGIT_CASE_INSENSITIVE = True
+
