@@ -9,6 +9,12 @@ urlpatterns = [
         view=views.ExploreUsers.as_view(),
         name='exploreusers'
     ),
+    url(
+        regex=r'^(?P<user_id>[0-9]+)/follow/$',
+        view=views.FollowUser.as_view(),
+        name='follow_user'
+
+    )
 
    
 ]
