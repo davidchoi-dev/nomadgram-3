@@ -32,7 +32,7 @@ class Feed(APIView):
 
 class LikeImage(APIView):
 
-    def get(self, request, image_id, format=None):
+    def post(self, request, image_id, format=None):
 
         user = request.user
 
@@ -63,3 +63,20 @@ class LikeImage(APIView):
             new_like.save()
 
             return Response(status=status.HTTP_201_CREATED)
+
+
+class CommentOnImage(APIView):
+
+    def post(self, request, image_id, format=None):
+
+        serializer = serializers.CommentSerializer(data=request.data)
+
+        if serializer.is_valid():
+
+            serializer.save()
+
+            return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+
+        else:
+
+            return Response(data=serializer.errors, stauts=status.HTTP_400_BAD_REQUEST)

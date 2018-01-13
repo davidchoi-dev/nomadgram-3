@@ -19,6 +19,7 @@ class ImageAdmin(admin.ModelAdmin):
         'creator',
     )
     list_display = (
+        'id',
         'file',
         'creator',
         'created_at',
@@ -30,6 +31,7 @@ class ImageAdmin(admin.ModelAdmin):
 @admin.register(models.Like)
 class LikeAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'creator',
         'image',
         'created_at',
@@ -40,6 +42,7 @@ class LikeAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     
     list_display = (
+        'id',
         'message',
         'creator',
         'image',
