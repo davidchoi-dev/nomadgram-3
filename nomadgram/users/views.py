@@ -1,3 +1,23 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from . import models, serializers
+
+
+class ExploreUsers(APIView):
+
+    def get(self, request, format=None):
+
+        last_five = models.User.objects.all().order_by('-date_joined')[:5]
+
+        serializer = serializers.ExploreUserSerializer(last_five,many=True)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+
+'''
+
 from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, ListView, RedirectView, UpdateView
 
@@ -43,3 +63,5 @@ class UserListView(LoginRequiredMixin, ListView):
     # These next two lines tell the view to index lookups by username
     slug_field = 'username'
     slug_url_kwarg = 'username'
+
+    '''
