@@ -29,6 +29,11 @@ urlpatterns = [
         view=views.UserFollowers.as_view(),
         name='user_followers'
     ),
+    url(
+        regex=r'^(?P<username>\w+)/following/$',
+        view=views.UserFollowing.as_view(),
+        name='user_following'
+    ),
 
    
 ]
