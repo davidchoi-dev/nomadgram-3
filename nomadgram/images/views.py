@@ -193,7 +193,7 @@ class ImageDetail(APIView):
         user = request.user
 
         try:
-            image = models.Image.objects.get(id=image_id, creator=user)
+            image = models.Image.objects.get(id=image_id)
         except models.Image.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
