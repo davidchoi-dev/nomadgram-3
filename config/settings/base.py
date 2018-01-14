@@ -49,6 +49,8 @@ THIRD_PARTY_APPS = [
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    'rest_framework', #REST Framework
+    'taggit', #Tags for the photos
 ]
 
 # Apps specific for this project go here.
@@ -56,8 +58,7 @@ LOCAL_APPS = [
     # custom users app
     'nomadgram.users.apps.UsersConfig',
     'nomadgram.images.apps.ImagesConfig',
-    'rest_framework', #REST Framework
-    'taggit', #Tags for the photos
+    'nomadgram.notifications.apps.NotificationsConfig', # Notifications
 
     # Your stuff: custom apps go here
 ]
