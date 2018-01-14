@@ -20,6 +20,8 @@ class FollowUser(APIView):
     def post(self, request, user_id, format=None):
 
         user = request.user
+
+        #follow notification
         
         try:
             user_to_follow = models.User.objects.get(id=user_id)
@@ -40,6 +42,7 @@ class UnFollowUser(APIView):
     def post(self, request, user_id, format=None):
 
         user = request.user
+        
         
         try:
             user_to_follow = models.User.objects.get(id=user_id)
@@ -72,6 +75,8 @@ class UserProfile(APIView):
 class UserFollowers(APIView):
 
     def get(self, request, username, format=None):
+        
+        # follow notifications
 
         try:
             found_user = models.User.objects.get(username=username)
