@@ -184,8 +184,15 @@ module.exports = {
                       flexbox: 'no-2009',
                     }),
                   ],
+                  sourceMap: true
                 },
               },
+              {
+                loader: require.resolve("sass-loader"),
+                options:{
+                  sourceMap: true
+                }
+              }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
