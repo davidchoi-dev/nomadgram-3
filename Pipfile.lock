@@ -74,9 +74,9 @@
         },
         "arrow": {
             "hashes": [
-                "sha256:a558d3b7b6ce7ffc74206a86c147052de23d3d4ef0e17c210dd478c53575c4cd"
+                "sha256:a15ecfddf334316e3ac8695e48c15d1be0d6038603b33043930dcf0e675c86ee"
             ],
-            "version": "==0.12.1"
+            "version": "==0.12.0"
         },
         "attrs": {
             "hashes": [
@@ -93,10 +93,10 @@
         },
         "babel": {
             "hashes": [
-                "sha256:ad209a68d7162c4cff4b29cdebe3dec4cef75492df501b0049a9433c96ce6f80",
-                "sha256:8ce4cb6fdd4393edd323227cba3a077bceb2a6ce5201c902c65e730046f41f14"
+                "sha256:f20b2acd44f587988ff185d8949c3e208b4b3d5d20fcab7d91fe481ffa435528",
+                "sha256:6007daf714d0cd5524bbe436e2d42b3c20e68da66289559341e48d2cd6d25811"
             ],
-            "version": "==2.5.3"
+            "version": "==2.5.1"
         },
         "binaryornot": {
             "hashes": [
@@ -107,10 +107,10 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:14131608ad2fd56836d33a71ee60fa1c82bc9d2c8d98b7bdbc631fe1b3cd1296",
-                "sha256:edbc3f203427eef571f79a7692bb160a2b0f7ccaa31953e99bd17e307cf63f7d"
+                "sha256:244be0d93b71e93fc0a0a479862051414d0e00e16435707e5bf5000f92e04694",
+                "sha256:5ec74291ca1136b40f0379e1128ff80e866597e4e2c1e755739a913bbc3613c0"
             ],
-            "version": "==2018.1.18"
+            "version": "==2017.11.5"
         },
         "cffi": {
             "hashes": [
@@ -347,10 +347,10 @@
         },
         "faker": {
             "hashes": [
-                "sha256:91c3e79db508f6e2b8ff3d3099fee0967c95ce02caa1f4028096641696336fc0",
-                "sha256:9da4c829d5592202a614d2db3c3e05d17684f5b590b7dbd6d7e70dc1053213a6"
+                "sha256:39d09909969617dea6088e64bb49d3f06373e585b9b20987252cbcd968ab423e",
+                "sha256:1472250ed27b5cd59c5bd3372f222bb22e641e645b874c8b5236845ff1f6ef4c"
             ],
-            "version": "==0.8.10"
+            "version": "==0.8.9"
         },
         "future": {
             "hashes": [
