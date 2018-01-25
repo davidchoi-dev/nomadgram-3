@@ -1,12 +1,15 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import users from "redux/modules/users";
 
-const middelwares = [thunk];
+const middlewares = [thunk];
 
-const env = process;
+const env = process.env.NODE_ENV;
 
-console.log(env);
+if(env === "development"){
+  const { logger } = require("redux-logger");
+  middlewares.push(logger);
+}
 
 const reducer = combineReducers({
   users
@@ -14,7 +17,7 @@ const reducer = combineReducers({
 
 
 let store = initialState => 
-  createStore(reducer, applyMiddleware(...middelwares));
+  createStore(reducer, applyMiddleware(...middlewares));
 
 
 export default store();
