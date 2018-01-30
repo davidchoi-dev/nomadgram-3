@@ -12,6 +12,9 @@ const Footer = (props,context) => (
                     <li className={styles.listItem}>Press</li>
                     <li className={styles.listItem}>API</li>
                     <li className={styles.listItem}>Jobs</li>
+                    <li className={styles.listItem}>Jobs</li>
+                    <li className={styles.listItem}>Jobs</li>
+                    <li className={styles.listItem}>Jobs</li>
                 </ul>
             </nav>
         </div >
