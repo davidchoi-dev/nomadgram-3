@@ -17,8 +17,8 @@ const initialState = {
 
 //reducer
 
-function reducer(state = initalState, action){
-    switch(actin,type){
+function reducer(state = initialState, action){
+    switch(action.type){
         default:
             return state;
     }
