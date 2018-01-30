@@ -1,15 +1,8 @@
-import React, {Component} from "react";
-import styles from "./styles.scss";
-import Footer from  "components/Footer";
+import { connect } from "react-redux";
 
-class App extends Component {
-  render() {
-    return(
-      <div className={styles.App}>
-        <Footer />
-      </div>
-    ); 
-  }
-}
-
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  const { user } = state;
+  return {
+    isLoggedIn: user.isLoggedIn
+  };
+};
