@@ -11,4 +11,4 @@ import Container from "./container";
 // Check email
 
 
-export default connect(Container);
+export default connect()(Container);

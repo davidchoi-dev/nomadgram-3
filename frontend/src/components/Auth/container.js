@@ -1,4 +1,4 @@
-import React, { Component } form "react";
+import React, { Component } from "react";
 import Auth from "./presenter";
 
 class Container  extends Component {
@@ -24,3 +24,6 @@ class Container  extends Component {
         });
     }
 }
+
+
+export default Container;
