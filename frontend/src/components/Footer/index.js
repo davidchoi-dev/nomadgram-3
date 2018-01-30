@@ -4,14 +4,14 @@ import styles from "./styles.scss";
 const Footer = (props,context) => (
     <footer className={styles.footer}>
         <div className={styles.column}>
-            <nav className={styles.list}>
+            <nav className={styles.nav}>
                 <ul className={styles.list}>
-                    <li clasName={styles.listItem}>About Us</li>
-                    <li clasName={styles.listItem}>About Us</li>
-                    <li clasName={styles.listItem}>Blog</li>
-                    <li clasName={styles.listItem}>Press</li>
-                    <li clasName={styles.listItem}>API</li>
-                    <li clasName={styles.listItem}>Jobs</li>
+                    <li className={styles.listItem}>About Us</li>
+                    <li className={styles.listItem}>About Us</li>
+                    <li className={styles.listItem}>Blog</li>
+                    <li className={styles.listItem}>Press</li>
+                    <li className={styles.listItem}>API</li>
+                    <li className={styles.listItem}>Jobs</li>
                 </ul>
             </nav>
         </div >
