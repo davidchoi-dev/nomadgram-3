@@ -24,8 +24,11 @@ class Container extends Component{
     }
     _handelInputChange = event => {
         const {target: { name, value }} = event;
-        console.log(value,name);
-    }
+        this.setState({
+            [name]: value
+        });
+        console.log(this.state);
+    };
 
 }
 
