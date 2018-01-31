@@ -4,17 +4,17 @@ import SignupForm from "./presenter";
 class Container extends Component{
     state = {
         email: "",
-        name: "",
+        fullname: "",
         username: "",
         password: ""
     }
 
     render(){
 
-        const {email, name, username, password} = this.state;
+        const {email, fullname, username, password} = this.state;
         return <SignupForm handelInputChange={this._handelInputChange}
                     emailValue={email}
-                    nameValue={name}
+                    fullnameValue={fullname}
                     usernameValue={username}
                     passwordValue={password}
         
@@ -23,7 +23,7 @@ class Container extends Component{
 
     }
     _handelInputChange = event => {
-        console.log(event.target.value);
+        console.log(event.target.name);
     }
 
 }
