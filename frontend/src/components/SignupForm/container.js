@@ -12,7 +12,9 @@ class Container extends Component{
     render(){
 
         const {email, fullname, username, password} = this.state;
-        return <SignupForm handelInputChange={this._handelInputChange}
+        return <SignupForm 
+                    handleInputChange={this._handleInputChange}
+                    handleSubmit={this._handleSubmit}
                     emailValue={email}
                     fullnameValue={fullname}
                     usernameValue={username}
@@ -22,13 +24,17 @@ class Container extends Component{
 
 
     }
-    _handelInputChange = event => {
+    _handleInputChange = event => {
         const {target: { name, value }} = event;
         this.setState({
             [name]: value
         });
-        console.log(this.state);
     };
+    _handleSubmit = event => {
+        event.preventDefault();
+        console.log(this.state);
+    }
+
 
 }
 
