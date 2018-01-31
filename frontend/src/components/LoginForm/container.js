@@ -9,7 +9,7 @@ class Container extends Component{
 
     render(){
         const { username, password } = this.state;
-        return <LoginForm hanleInputChange={this._handleInputChange}  usernameValue={username} passwordValue={password} />
+        return <LoginForm handleInputChange={this._handleInputChange}  usernameValue={username} passwordValue={password} />
     }
     _handleInputChange = event => {
         console.log(event);
