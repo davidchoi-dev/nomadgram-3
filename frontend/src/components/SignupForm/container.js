@@ -23,7 +23,8 @@ class Container extends Component{
 
     }
     _handelInputChange = event => {
-        console.log(event.target.name);
+        const {target: { name, value }} = event;
+        console.log(value,name);
     }
 
 }
