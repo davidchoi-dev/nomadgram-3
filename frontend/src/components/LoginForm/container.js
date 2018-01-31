@@ -9,10 +9,22 @@ class Container extends Component{
 
     render(){
         const { username, password } = this.state;
-        return <LoginForm handleInputChange={this._handleInputChange}  usernameValue={username} passwordValue={password} />
+        return <LoginForm 
+                    handleInputChange={this._handleInputChange} 
+                    handleSubmit={this._handleSubmit}
+                    usernameValue={username} 
+                    passwordValue={password} 
+                    />
     }
     _handleInputChange = event => {
-        console.log(event);
+        const { target: {value, name}} = event;
+        this.setState({
+            [name]: value
+        })
+    }
+    _handleSubmit = event => {
+        event.preventDefault();
+        // redux will be here
     }
 }
 
