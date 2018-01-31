@@ -18,6 +18,19 @@ const Auth = (props, context) => (
                         </span>
                     </p>
                 );
+                case "signup":
+                return  (
+                    <p>Have an account?(" ")
+                        <span 
+                            onClick={props.changeAction} 
+                            className={styles.changeLink}
+                            >
+                            Log in
+                        </span>
+                    </p>
+                );
+
+
                 default:
                 null;
             }
