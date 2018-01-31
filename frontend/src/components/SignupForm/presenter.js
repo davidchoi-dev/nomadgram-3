@@ -1,6 +1,5 @@
 import React from "react";
 import Ionicon from "react-ionicons";
-import PropTypes from "prop-types";
 import formStyles from "shared/formStyles.scss";
 
 
