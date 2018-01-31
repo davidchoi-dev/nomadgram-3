@@ -1,11 +1,12 @@
 import React from "react";
 import Ionicon from "react-ionicons";
+import PropTypes from "prop-types";
 import styles from "./styles.scss";
 
-export const LoginForm = props => (
+export const LoginForm = (props, context) => (
   <div className={styles.formComponent}>
     <form className={styles.form}>
-      <input type="text" placeholder="Username" className={styles.textInput} />
+      <input type="text" placeholder={context.t("Username")} className={styles.textInput} />
       <input
         type="password"
         placeholder="Password"
@@ -21,6 +22,11 @@ export const LoginForm = props => (
     <span className={styles.forgotLink}>Forgot password?</span>
   </div>
 );
+
+
+LoginForm.contextTypes = {
+  t: PropTypes.func.isRequired
+}
 
 export const SignupForm = props => (
   <div className={styles.formComponent}>
