@@ -1,9 +1,15 @@
 export const translations = {
-    es: {
-        "Login in": "Inciar Sesion",
-        "About Us": "Sobre nosotro"
-    },
-    kr: {
-        "Log in": "로그인"
-    }
+  'es': {
+    'Username': '',
+    'About Us': '',
+    'AA': '',
+    'Blog': '',
+    'Press': '',
+    'API': '',
+    'Job': '',
+    'AAA': '',
+    'BB': '',
+  },
+  'options': {
+  },
 }

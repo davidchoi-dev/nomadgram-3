@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Language: es"
+
+#: src/components/AuthForms/index.js
+msgid "Username"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "About Us"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "AA"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Blog"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Press"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "API"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "Job"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "AAA"
+msgstr ""
+
+#: src/components/Footer/index.js
+msgid "BB"
+msgstr ""
+
