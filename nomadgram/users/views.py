@@ -7,14 +7,13 @@ from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
 
 
-
 class ExploreUsers(APIView):
 
     def get(self, request, format=None):
 
         last_five = models.User.objects.all().order_by('-date_joined')[:5]
 
-        serializer = serializers.ListUserSerializer(last_five,many=True)
+        serializer = serializers.ListUserSerializer(last_five, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
@@ -24,12 +23,11 @@ class FollowUser(APIView):
     def post(self, request, user_id, format=None):
 
         user = request.user
-        
+
         try:
             user_to_follow = models.User.objects.get(id=user_id)
         except models.User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
 
         user.following.add(user_to_follow)
 
@@ -40,19 +38,16 @@ class FollowUser(APIView):
         return Response(status=status.HTTP_200_OK)
 
 
-
 class UnFollowUser(APIView):
 
     def post(self, request, user_id, format=None):
 
         user = request.user
-        
-        
+
         try:
             user_to_follow = models.User.objects.get(id=user_id)
         except models.User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
 
         user.following.remove(user_to_follow)
 
@@ -64,12 +59,13 @@ class UnFollowUser(APIView):
 class UserProfile(APIView):
 
     def get_user(self, username):
+
         try:
             found_user = models.User.objects.get(username=username)
             return found_user
         except models.User.DoesNotExist:
             return None
-    
+
     def get(self, request, username, format=None):
 
         found_user = self.get_user(username)
@@ -78,12 +74,9 @@ class UserProfile(APIView):
 
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-
-
         serializer = serializers.UserProfileSerializer(found_user)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
-
 
     def put(self, request, username, format=None):
 
@@ -99,30 +92,25 @@ class UserProfile(APIView):
 
             return Response(status=status.HTTP_401_UNAUTHORIZED)
 
-
         else:
+
             serializer = serializers.UserProfileSerializer(
                 found_user, data=request.data, partial=True)
 
-        if serializer.is_valid():
+            if serializer.is_valid():
 
-            serializer.save()
+                serializer.save()
 
-            return Response(data=serializer.data, status=status.HTTP_200_OK)
+                return Response(data=serializer.data, status=status.HTTP_200_OK)
 
-        else:
+            else:
 
-            return Response(data=serializers.errors, status=status.HTTP_400_BAD_REQUEST)
-
- 
-
+                return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserFollowers(APIView):
 
     def get(self, request, username, format=None):
-        
-        # follow notifications
 
         try:
             found_user = models.User.objects.get(username=username)
@@ -135,7 +123,6 @@ class UserFollowers(APIView):
             user_followers, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
-
 
 
 class UserFollowing(APIView):
@@ -155,24 +142,23 @@ class UserFollowing(APIView):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
-
 class Search(APIView):
 
     def get(self, request, format=None):
 
-        username = request.query_params.get('username',None)
+        username = request.query_params.get('username', None)
 
-        if username is None:
+        if username is not None:
 
             users = models.User.objects.filter(username__istartswith=username)
 
             serializer = serializers.ListUserSerializer(users, many=True)
-        
+
             return Response(data=serializer.data, status=status.HTTP_200_OK)
 
         else:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
 
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class ChangePassword(APIView):
@@ -218,57 +204,5 @@ class ChangePassword(APIView):
             return Response(status=status.HTTP_401_UNAUTHORIZED)
 
 
-
 class FacebookLogin(SocialLoginView):
     adapter_class = FacebookOAuth2Adapter
-
-
-'''
-
-from django.core.urlresolvers import reverse
-from django.views.generic import DetailView, ListView, RedirectView, UpdateView
-
-from django.contrib.auth.mixins import LoginRequiredMixin
-
-from .models import User
-
-
-class UserDetailView(LoginRequiredMixin, DetailView):
-    model = User
-    # These next two lines tell the view to index lookups by username
-    slug_field = 'username'
-    slug_url_kwarg = 'username'
-
-
-class UserRedirectView(LoginRequiredMixin, RedirectView):
-    permanent = False
-
-    def get_redirect_url(self):
-        return reverse('users:detail',
-                       kwargs={'username': self.request.user.username})
-
-
-class UserUpdateView(LoginRequiredMixin, UpdateView):
-
-    fields = ['name', ]
-
-    # we already imported User in the view code above, remember?
-    model = User
-
-    # send the user back to their own page after a successful update
-    def get_success_url(self):
-        return reverse('users:detail',
-                       kwargs={'username': self.request.user.username})
-
-    def get_object(self):
-        # Only get the User record for the user making the request
-        return User.objects.get(username=self.request.user.username)
-
-
-class UserListView(LoginRequiredMixin, ListView):
-    model = User
-    # These next two lines tell the view to index lookups by username
-    slug_field = 'username'
-    slug_url_kwarg = 'username'
-
-    '''
