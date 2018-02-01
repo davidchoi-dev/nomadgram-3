@@ -5,23 +5,22 @@ import formStyles from "shared/formStyles.scss";
 
 const LoginForm = (props, context) => (
   <div className={formStyles.formComponent}>
-    <form className={formStyles.form} onSubmit={props.handleSubmit} >
+    <form className={formStyles.form} onSubmit={props.handleSubmit}>
       <input
         type="text"
         placeholder={context.t("Username")}
         className={formStyles.textInput}
-        value={props.usernameValue}
         onChange={props.handleInputChange}
         name="username"
-
+        value={props.usernameValue}
       />
       <input
         type="password"
         placeholder={context.t("Password")}
         className={formStyles.textInput}
-        value={props.passwordValue}
         onChange={props.handleInputChange}
         name="password"
+        value={props.passwordValue}
       />
       <input
         type="submit"
@@ -30,15 +29,15 @@ const LoginForm = (props, context) => (
       />
     </form>
     <span className={formStyles.divider}>{context.t("or")}</span>
-      <FacebookLogin
-        appId="1378681518867455"
-        autoLoad={true}
-        fields="name,email,picture"
-        callback={props.handleFacebookLogin}
-        cssClass={formStyles.facebookLink}
-        icon="fa-facebook-official"
-        textButton={context.t("Log in with Facebook")}
-      />
+    <FacebookLogin
+      appId="1378681518867455"
+      autoLoad={false}
+      fields="name,email,picture"
+      callback={props.handleFacebookLogin}
+      cssClass={formStyles.facebookLink}
+      icon="fa-facebook-official"
+      textButton={context.t("Log in with Facebook")}
+    />
     <span className={formStyles.forgotLink}>
       {context.t("Forgot password?")}
     </span>
@@ -46,12 +45,12 @@ const LoginForm = (props, context) => (
 );
 
 LoginForm.propTypes = {
+  handleInputChange: PropTypes.func.isRequired,
   usernameValue: PropTypes.string.isRequired,
   passwordValue: PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleFacebookLogin: PropTypes.func.isRequired
-}
+};
 
 LoginForm.contextTypes = {
   t: PropTypes.func.isRequired
